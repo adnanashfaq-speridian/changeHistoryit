@@ -1,0 +1,35 @@
+<template>
+    
+    <template if:true={showInitialPage}>
+       <lightning-input type="text" label="Enter some text" value={textBox1Value} placeholder="Acme Inc." onchange={handleTextChange}></lightning-input>
+
+        <lightning-input type="text" label="Enter some text" value="GMC Inc."></lightning-input>
+
+        <!-- //Show table ---> 
+         <lightning-button label="Search" onclick={showElectionsTab}></lightning-button>
+    </template>
+
+    <template if:true={showTabSet}>
+      <lightning-tabset>
+          
+          <lightning-tab label="E Details" onactive={handleTabChange}>
+              <template if:true={isTab1Active}>
+                <lightning-button label="Open E Report" onclick={handleEButtonClick}></lightning-button>
+              </template>
+          </lightning-tab>
+
+          <lightning-tab label="V Details" onactive={handleTabChange}>
+              <template if:true={isTab2Active}>
+                  <lightning-button label="Open V Report" onclick={handleVButtonClick}></lightning-button>
+              </template>
+          </lightning-tab>
+
+          <lightning-tab label="N Details" onactive={handleTabChange}>
+              <template if:true={isTab3Active}>
+                  <lightning-button label="Open N Report" onclick={handleNButtonClick}></lightning-button>
+              </template>
+          </lightning-tab>
+
+      </lightning-tabset>
+    </template>
+</template>
